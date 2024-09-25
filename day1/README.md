@@ -263,6 +263,11 @@ sudo  yum install httpd -y
  ec2-user@ip-172-31-17-104 ~]$ ls
 html-sample-app
 
+===>>
+sudo cp -rf html-sample-app/*  /var/www/html/
+
+===>
+sudo systemctl start httpd
 ```
 
 
