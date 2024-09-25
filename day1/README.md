@@ -271,5 +271,14 @@ sudo systemctl start httpd
 ```
 
 
+### checking logs 
+
+```
+38  sudo ls /var/log/httpd
+   39  sudo cat /var/log/httpd/access_log
+   40  sudo cat /var/log/httpd/error_log
+
+```
+
 
 
