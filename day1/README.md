@@ -237,5 +237,15 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED         S
 69c80e910052   splunk/splunk:latest   "/sbin/entrypoint.sh…"   9 seconds ago   Up 6 seconds (health: starting)   8065/tcp, 8088-8089/tcp, 8191/tcp, 9887/tcp, 0.0.0.0:8000->8000/tcp, :::8000->8000/tcp, 9997/tcp   splunk
 
 ```
-    
+
+## Creating and understanding indexing 
+
+<img src="index1.png">
+
+## SPL query 
+
+<img src="spl1.png">
+
+
+
 
