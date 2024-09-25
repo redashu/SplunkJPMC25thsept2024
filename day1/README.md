@@ -290,3 +290,32 @@ sudo systemctl start httpd
 
 <img src="spf22.png">
 
+
+### setup universal forwarder 
+
+```
+wget -O splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm "https://download.splunk.com/products/universalforwarder/releases/9.3.1/linux/splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm"
+
+===>  list 
+
+
+ ls
+html-sample-app  splunk-9.3.1-0b8d769cb912.x86_64.rpm  splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm
+[ec2-user@ip-172-31-80-225 ~]$ 
+
+====>> Installation 
+
+sudo rpm -ivh splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm 
+warning: splunkforwarder-9.3.1-0b8d769cb912.x86_64.rpm: Header V4 RSA/SHA256 Signature, key ID b3cd4420: NOKEY
+Verifying...                          ################################# [100%]
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:splunkforwarder-9.3.1-0b8d769cb91################################# [100%]
+find: ‘/opt/splunkforwarder/lib/python3.7/site-packages’: No such file or directory
+find: ‘/opt/splunkforwarder/lib/python3.9/site-packages’: No such file or directory
+complete
+[ec2-user@ip-172-31-80-225 ~]$ rpm -q splunkforwarder
+splunkforwarder-9.3.1-0b8d769cb912.x86_64
+[ec2-user@ip-172-31-80-225 ~]$ 
+
+====> starting with 
