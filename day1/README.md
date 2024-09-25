@@ -352,3 +352,39 @@ splunk helpers are running (PIDs: 93869).
 
 
 ```
+
+# ON Splunk forwarder run these commands 
+
+### add forwarder 
+
+```
+sudo /opt/splunkforwarder/bin/splunk  add forward-server 44.196.158.246:9997
+
+Warning: Attempting to revert the SPLUNK_HOME ownership
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"
+Splunk username: adminf
+Password: 
+Added forwarding to: 44.196.158.246:9997.
+
+
+[ec2-user@ip-172-31-80-225 ~]$ 
+[ec2-user@ip-172-31-80-225 ~]$ 
+[ec2-user@ip-172-31-80-225 ~]$ sudo /opt/splunkforwarder/bin/splunk  list  forward-server 
+Warning: Attempting to revert the SPLUNK_HOME ownership
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"
+Active forwards:
+        None
+Configured but inactive forwards:
+        44.196.158.246:9997
+
+===> after few seconds check this again 
+
+[ec2-user@ip-172-31-80-225 ~]$ sudo /opt/splunkforwarder/bin/splunk  list  forward-server 
+Warning: Attempting to revert the SPLUNK_HOME ownership
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"
+Active forwards:
+        44.196.158.246:9997
+Configured but inactive forwards:
+        None
+[ec2-user@ip-172-31-80-225 ~]$ 
+```
