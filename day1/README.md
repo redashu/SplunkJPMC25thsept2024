@@ -247,5 +247,24 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED         S
 <img src="spl1.png">
 
 
+## Deploying sample app server in linux vm 
+
+```
+sudo  yum install httpd -y 
+ sudo yum install git -y
+
+ ===> taking source code of webapp 
+
+ ---
+ git clone https://github.com/schoolofdevops/html-sample-app.git
+
+ -- verify it 
+
+ ec2-user@ip-172-31-17-104 ~]$ ls
+html-sample-app
+
+```
+
+
 
 
