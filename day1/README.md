@@ -282,3 +282,11 @@ sudo systemctl start httpd
 
 
 
+### Setup of splunk forwarder 
+
+<img src="spf111.png">
+
+### Universal and Heavy forwarder 
+
+<img src="spf22.png">
+
