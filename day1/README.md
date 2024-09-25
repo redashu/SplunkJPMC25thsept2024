@@ -174,3 +174,68 @@ sudo rm -rf /opt/splunk/
 sudo rpm -e splunk 
 
 ```
+
+## SPE licensing 
+
+<img src="spel.png">
+
+### COntainer are new resouces where we are running apps 
+
+<img src="cont1.png">
+
+### Install DOcker in linux 
+
+```
+ sudo yum install docker -y
+Last metadata expiration check: 2:48:08 ago on Wed Sep 25 04:35:35 2024.
+Dependencies resolved.
+=========================================================================================================================================================
+ Package                                    Architecture               Version                                     Repository                       Size
+=========================================================================================================================================================
+Installing:
+ docker                                     x86_64                     25.0.6-1.amzn2023.0.2                       amazonlinux                      44 M
+Installing dependencies:
+ containerd                                 x86_64                     1.7.20-1.amzn2023.0.1                       amazonlinux                      35 M
+ iptables-libs                              x86_64                     1.8.8-3.amzn2023.0.2                        amazonlinux                     401 k
+ iptables-nft                               x86_64                     1.8.8-3.amzn2023.0.2                        amazonlinux                     183 k
+ libcgroup                                  x86_64                     3.0-1.amzn2023.0.1                          amazonlinux                      75 k
+ libnetfilter_conntrack                     x86_64                     1.0.8-2.amzn2023.0.2                        amazonlinux                      58 k
+ libnfnetlink                               x86_64                     1.0.1-19.amzn2023.0.2                       amazonlinux                      30 k
+ libnftnl                                   x86_64                     1.2.2-2.amzn2023.0.2                        amazonlinux                      84 k
+ pigz                                       x86_64                     2.5-1.amzn2023.0.3            
+```
+
+### install and start
+
+```
+sudo yum install docker -y
+Last metadata expiration check: 2:50:10 ago on Wed Sep 25 04:35:35 2024.
+Package docker-25.0.6-1.amzn2023.0.2.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[ec2-user@ip-172-31-80-225 ~]$ 
+[ec2-user@ip-172-31-80-225 ~]$ 
+[ec2-user@ip-172-31-80-225 ~]$ sudo systemctl  start docker 
+```
+
+### creating splunk enterprise server contaienr 
+
+```
+sudo  docker run -d -p 8000:8000 -e "SPLUNK_START_ARGS=--accept-license" -e "SPLUNK_PASSWORD=Redhat@12345" --name splunk s
+plunk/splunk:latest
+
+```
+
+
+### checking 
+
+```
+
+sudo docker ps
+CONTAINER ID   IMAGE                  COMMAND                  CREATED         STATUS                            PORTS                                                                                              NAMES
+69c80e910052   splunk/splunk:latest   "/sbin/entrypoint.sh…"   9 seconds ago   Up 6 seconds (health: starting)   8065/tcp, 8088-8089/tcp, 8191/tcp, 9887/tcp, 0.0.0.0:8000->8000/tcp, :::8000->8000/tcp, 9997/tcp   splunk
+
+```
+    
+
