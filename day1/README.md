@@ -65,3 +65,48 @@ Preparing...
 rpm -q splunk 
 splunk-9.3.1-0b8d769cb912.x86_64
 ```
+
+### Installation Directory 
+
+```
+
+[ec2-user@ip-172-31-80-225 ~]$ sudo ls /opt/splunk/
+LICENSE.txt        bin            etc  include  license-eula.txt  opt                share                                                swidtag
+README-splunk.txt  copyright.txt  ftr  lib      openssl           quarantined_files  splunk-9.3.1-0b8d769cb912-linux-2.6-x86_64-manifest
+[ec2-user@ip-172-31-80-225 ~]$ 
+[ec2-user@ip-172-31-80-225 ~]$ 
+
+
+
+===> all SPlunk Binary
+
+
+ sudo ls /opt/splunk/bin
+2to3-3.7                    fill_summary_index.py   mongod                         prichunkpng  pyvenv                          splunk-optimize-lex
+2to3-3.9                    genAuditKeys.py         mongod-3.6                     priforgepng  pyvenv-3.7                      splunk-tlsd
+ColdStorageArchiver.py      genRootCA.sh            mongod-4.0                     prigreypng   rapidDiag                       splunkd
+ColdStorageArchiver_GCP.py  genSignedServerCert.py  mongodump                      pripalpng    recover-metadata                splunkmon
+S3benchmark                 genSignedServerCert.sh  mongorestore                   pripamtopng  rest_handler.py                 supervisor-simulator
+bloom                       genWebCert.py           noah_self_storage_archiver.py  pripnglsch   runScript.py                    tarit.py
+bottle.py                   genWebCert.sh           node                           pripngtopam  safe_restart_cluster_master.py  tocsv.py
+btool                       idle3                   openssl                        priweavepng  scripts                         tsidx_scan.py
+btprobe                     idle3.7                 parse_xml_buckets.py           pydoc3       scrubber.py                     tsidxprobe
+bzip2                       idle3.9                 pcre2-config                   pydoc3.7     searchtest                      tsidxprobe_plo
+classify                    importtool              pcregextest                    pydoc3.9     setSplunkEnv                    untarit.py
+coldToFrozenExample.py      installit.py            pid_check.sh                   python       shc_upgrade_template.py         walklex
+compsup                     jars                    pip                            python3      signtool                        wheel
+copyright.txt               jsmin                   pip3                           python3.7    slim
+dbmanipulator.py            locktest                pip3.7                         python3.7m   splunk
+exporttool                  locktool                pip3.9                         python3.9    splunk-optimize
+
+
+====>>> all SPlunk config files 
+
+sudo ls /opt/splunk/etc
+anonymizer     deployment-apps      log-btool.cfg          log-utility.cfg  myinstall        searchLanguage.xml          splunk.version
+apps           disabled-apps        log-cmdline-debug.cfg  log.cfg          openldap         shcluster                   system
+auth           findlogs.ini         log-cmdline.cfg        manager-apps     packages         splunk-enttrial.lic         users
+copyright.txt  init.d               log-debug.cfg          master-apps      packagetype      splunk-launch.conf
+datetime.xml   log-btool-debug.cfg  log-searchprocess.cfg  modules          prettyprint.xsl  splunk-launch.conf.default
+
+```
