@@ -388,3 +388,12 @@ Configured but inactive forwards:
         None
 [ec2-user@ip-172-31-80-225 ~]$ 
 ```
+
+### adding monitor directory 
+
+```
+sudo /opt/splunkforwarder/bin/splunk  add  monitor  /var/log/httpd 
+
+====>
+ sudo /opt/splunkforwarder/bin/splunk  list  monitor  
+```
