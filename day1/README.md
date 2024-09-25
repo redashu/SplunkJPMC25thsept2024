@@ -110,3 +110,39 @@ copyright.txt  init.d               log-debug.cfg          master-apps      pack
 datetime.xml   log-btool-debug.cfg  log-searchprocess.cfg  modules          prettyprint.xsl  splunk-launch.conf.default
 
 ```
+
+### start and activate Splunk licensing  (only for the first time)
+
+```
+sudo /opt/splunk/bin/splunk --accept-license  start
+
+This appears to be your first time running this version of Splunk.
+
+Splunk software must create an administrator account during startup. Otherwise, you cannot log in.
+Create credentials for the administrator account.
+Characters do not appear on the screen when you type in credentials.
+
+Please enter an administrator username: admin
+Password must contain at least:
+   * 8 total printable ASCII character(s).
+Please enter a new password: 
+```
+
+
+### checking status 
+
+```
+sudo /opt/splunk/bin/splunk  status
+splunkd is running (PID: 18311).
+splunk helpers are running (PIDs: 18315 18480 18487 18534 18613 18880 19199 19200).
+```
+
+### enabling service of splunk persistently 
+
+```
+ sudo /opt/splunk/bin/splunk  enable boot-start
+Init script installed at /etc/init.d/splunk.
+Init script is configured to run at boot.
+[ec2-user@ip-172-31-80-225 ~]$ 
+
+```
