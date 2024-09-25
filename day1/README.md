@@ -32,6 +32,9 @@
 
 ```
 wget -O splunk-9.3.1-0b8d769cb912.x86_64.rpm "https://download.splunk.com/products/splunk/releases/9.3.1/linux/splunk-9.3.1-0b8d769cb912.x86_64.rpm"
+
+
+
 --2024-09-25 05:54:56--  https://download.splunk.com/products/splunk/releases/9.3.1/linux/splunk-9.3.1-0b8d769cb912.x86_64.rpm
 Resolving download.splunk.com (download.splunk.com)... 3.167.37.9, 3.167.37.124, 3.167.37.110, ...
 Connecting to download.splunk.com (download.splunk.com)|3.167.37.9|:443... connected.
@@ -56,6 +59,8 @@ splunk-9.3.1-0b8d769cb912.x86_64.rpm
 
 ```
  sudo rpm -ivh splunk-9.3.1-0b8d769cb912.x86_64.rpm 
+
+
 warning: splunk-9.3.1-0b8d769cb912.x86_64.rpm: Header V4 RSA/SHA256 Signature, key ID b3cd4420: NOKEY
 Verifying...                          ################################# [100%]
 Preparing...                          
@@ -63,6 +68,7 @@ Preparing...
 ===> Verify 
 
 rpm -q splunk 
+
 splunk-9.3.1-0b8d769cb912.x86_64
 ```
 
@@ -144,5 +150,27 @@ splunk helpers are running (PIDs: 18315 18480 18487 18534 18613 18880 19199 1920
 Init script installed at /etc/init.d/splunk.
 Init script is configured to run at boot.
 [ec2-user@ip-172-31-80-225 ~]$ 
+
+```
+
+
+### Stopping and removing  (uninstalling)
+
+
+```
+ sudo /opt/splunk/bin/splunk  stop 
+
+Stopping splunkd...
+Shutting down.  Please wait, as this may take a few minutes.
+..                                                         [  OK  ]
+Stopping splunk helpers...
+                                                           [  OK  ]
+Done.
+
+### removing splunk 
+
+sudo rm -rf /opt/splunk/
+
+sudo rpm -e splunk 
 
 ```
