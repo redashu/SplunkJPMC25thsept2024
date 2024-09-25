@@ -318,4 +318,37 @@ complete
 splunkforwarder-9.3.1-0b8d769cb912.x86_64
 [ec2-user@ip-172-31-80-225 ~]$ 
 
-====> starting with 
+====> starting with license 
+
+sudo /opt/splunkforwarder/bin/splunk start --accept-license
+
+
+Warning: Attempting to revert the SPLUNK_HOME ownership
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"
+
+This appears to be your first time running this version of Splunk.
+
+Splunk software must create an administrator account during startup. Otherwise, you cannot log in.
+Create credentials for the administrator account.
+Characters do not appear on the screen when you type in credentials.
+
+Please enter an administrator username: adminf
+Password must contain at least:
+   * 8 total printable ASCII character(s).
+
+
+===> enable to boot 
+
+ sudo /opt/splunkforwarder/bin/splunk enable boot-start
+
+
+ ===> checking status
+
+ sudo /opt/splunkforwarder/bin/splunk status
+Warning: Attempting to revert the SPLUNK_HOME ownership
+Warning: Executing "chown -R splunkfwd:splunkfwd /opt/splunkforwarder"
+splunkd is running (PID: 93865).
+splunk helpers are running (PIDs: 93869).
+
+
+```
