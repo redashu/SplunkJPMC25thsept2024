@@ -51,3 +51,17 @@ splunk-9.3.1-0b8d769cb912.x86_64.rpm
 [ec2-user@ip-172-31-80-225 ~]$ '
 
 ```
+
+## Installing Splunk Enterprise license software on RHEL 
+
+```
+ sudo rpm -ivh splunk-9.3.1-0b8d769cb912.x86_64.rpm 
+warning: splunk-9.3.1-0b8d769cb912.x86_64.rpm: Header V4 RSA/SHA256 Signature, key ID b3cd4420: NOKEY
+Verifying...                          ################################# [100%]
+Preparing...                          
+
+===> Verify 
+
+rpm -q splunk 
+splunk-9.3.1-0b8d769cb912.x86_64
+```
