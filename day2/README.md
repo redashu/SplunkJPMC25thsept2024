@@ -84,3 +84,17 @@ Eval is one of the most powerfull command to do data transformation , manipulati
 ```
 index="ashu_web" sourcetype=access_combined | eval ashu_urls=mvindex(split(uri,"?"),0) | table uri , ashu_urls
 ```
+
+### Example 6 
+
+```
+index="main" host="ip-172-31-80-225.ec2.internal" | eval  suspicious_clients=if(match(useragent,"(curl|Wget|bots)"), "Suspicious" , "Legitimate" )  |                   table useragent ,suspicious_clients
+```
+
+===>
+
+# Example 7 
+
+```
+index="main" host="ip-172-31-80-225.ec2.internal" | eval  suspicious_clients=if(match(useragent,"(curl|Wget|bots)"), "Suspicious" , "Legitimate" )  |                   stats count by  suspicious_clients |table suspicious_clients  , count
+```
