@@ -50,3 +50,13 @@ index="main" host="ip-172-31-80-225.ec2.internal"  ( sourcetype="access_log-too_
 index="main"  ( sourcetype="access_log-too_small" OR sourcetype="access_combined" ) | stats count by host | where count > 300 | sort count
 
 ```
+
+### Example 3 
+
+```
+index="main"  ( sourcetype="access_log-too_small" OR sourcetype="access_combined" ) host="ip-172-31-80-225.ec2.internal" status>=400 status<500 |  stats count by clientip | where count > 2 | sort - count
+
+```
+
+### Example 4 
+
