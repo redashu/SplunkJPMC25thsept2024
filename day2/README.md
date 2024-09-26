@@ -98,3 +98,13 @@ index="main" host="ip-172-31-80-225.ec2.internal" | eval  suspicious_clients=if(
 ```
 index="main" host="ip-172-31-80-225.ec2.internal" | eval  suspicious_clients=if(match(useragent,"(curl|Wget|bots)"), "Suspicious" , "Legitimate" )  |                   stats count by  suspicious_clients |table suspicious_clients  , count
 ```
+
+## Regex in SPL 
+
+<img src="rex.png">
+
+### keywords and token in SPL regex 
+
+<img src="tokens.png">
+
+
