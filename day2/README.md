@@ -107,4 +107,25 @@ index="main" host="ip-172-31-80-225.ec2.internal" | eval  suspicious_clients=if(
 
 <img src="tokens.png">
 
+# Reports in Splunk 
+
+<img src="rp1.png">
+
+
+
+## macros 
+
+```
+ eval  suspicious_clients=if(match(useragent,"(curl|Wget|bots)"), "Suspicious" , "Legitimate" )  |  stats count by  suspicious_clients |table suspicious_clients  , count
+
+ --> ashu_evalute
+```
+
+## using it 
+
+```
+index="main" host="ip-172-31-86-113.ec2.internal" | `ashu_evalute`
+```
+
+<img src="macro.png">
 
