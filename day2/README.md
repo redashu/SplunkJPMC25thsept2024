@@ -27,3 +27,12 @@ sudo /opt/splunkforwarder/bin/splunk   list forward-server
 ```
 sudo systemctl start httpd
 ```
+
+### Understanding Splunk Enterprise server -- Indexer 
+
+<img src="indexer1.png">
+
+### How to Interact with search head using SPL 
+
+<img src="spl4.png">
+
