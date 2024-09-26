@@ -60,3 +60,27 @@ index="main"  ( sourcetype="access_log-too_small" OR sourcetype="access_combined
 
 ### Example 4 
 
+### using top and rare 
+
+```
+index="ashu_web" sourcetype=linux_secure | rare limit=2 process
+
+===>
+
+
+```
+
+<img src="top.png">
+
+# EvAL 
+
+```
+Eval is one of the most powerfull command to do data transformation , manipulation and new field creation as well
+
+```
+
+### Example 5 
+
+```
+index="ashu_web" sourcetype=access_combined | eval ashu_urls=mvindex(split(uri,"?"),0) | table uri , ashu_urls
+```
