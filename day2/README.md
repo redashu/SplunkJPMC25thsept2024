@@ -36,3 +36,17 @@ sudo systemctl start httpd
 
 <img src="spl4.png">
 
+# SPL 
+
+### Example 1 
+
+```
+index="main" host="ip-172-31-80-225.ec2.internal"  ( sourcetype="access_log-too_small" OR sourcetype="access_combined" )
+```
+
+### Example 2 
+
+```
+index="main"  ( sourcetype="access_log-too_small" OR sourcetype="access_combined" ) | stats count by host | where count > 300 | sort count
+
+```
