@@ -61,3 +61,10 @@ index = jpmc_final
 ```
 
 ## Note: make index must be already available to SPE side 
+
+
+### SPL 
+
+```
+index="main" host="ip-172-31-80-225.ec2.internal" status>=200 status<=310 | bin _time span=10s | stats count as req_count by clientip, _time, | where req_count > 10 | table _time, clientip, req_count
+```
