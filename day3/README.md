@@ -37,3 +37,27 @@ index="main" host="ip-172-31-80-225.ec2.internal" | rex field=_raw "^(?P<clients
 index="main" host="ip-172-31-80-225.ec2.internal"  | rex field=_raw "(?<my_keyword>\bhack\b)" | where  mvcount(split(_raw,"hack"))=2 | table _time , my_keyword
 ```
 
+## configuring SPlunk forwarder to send data to particular index 
+
+```
+cat /opt/splunkforwarder/etc/apps/search/local/inputs.conf 
+[monitor:///var/log/httpd]
+disabled = false
+
+
+[monitor:///var/log/dnf.log]
+index = ashu_web
+
+
+
+[monitor:///var/log/nginx]
+index = jpmc_final
+```
+
+### restart service 
+
+```
+/opt/splunkforwarder/bin/splunk restart 
+```
+
+## Note: make index must be already available to SPE side 
