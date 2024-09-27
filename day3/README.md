@@ -10,3 +10,11 @@
 
 [click_here](https://community.splunk.com/)
 
+## users in Splunk 
+
+<img src="user1.png">
+
+### Understanding dashboards 
+
+<img src="dash1.png">
+
