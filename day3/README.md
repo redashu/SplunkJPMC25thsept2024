@@ -18,3 +18,15 @@
 
 <img src="dash1.png">
 
+## Timechart 
+
+```
+index="main" host="ip-172-31-80-225.ec2.internal" | timechart count | where count > 100
+```
+
+
+## using Rex command to find patterns and create new field 
+
+```
+index="main" host="ip-172-31-80-225.ec2.internal" | rex field=_raw "^(?P<clients_ip>[^ ]+)" | table _time, clients_ip
+```
