@@ -68,3 +68,43 @@ index = jpmc_final
 ```
 index="main" host="ip-172-31-80-225.ec2.internal" status>=200 status<=310 | bin _time span=10s | stats count as req_count by clientip, _time, | where req_count > 10 | table _time, clientip, req_count
 ```
+
+
+## alerts in Splunk 
+
+<img src="alt1.png">
+
+## Understanding Storage location in Splunk ENterprise 
+
+<img src="spe.png">
+
+### Buckets in Index 
+
+<img src="bkt1.png">
+
+### Buckets workflow 
+
+<img src="bkt2.png">
+
+## SplunkGPT 
+
+<img src="spg.png">
+
+## SPlunk API 
+
+<img src="spAPi.png">
+
+
+```
+ curl  -u 'admin:Jpmc@12345' -k https://localhost:8089
+   16  curl  -u 'admin:Jpmc@12345' -k https://localhost:8089/services
+   17  curl  -u 'admin:Jpmc@12345' -k https://localhost:8089/services  | grep -i search 
+   18  curl  -u 'admin:Jpmc@12345' -k https://localhost:8089/services/search
+   19  curl  -u 'admin:Jpmc@12345' -k https://localhost:8089/services/search/jobs -d search="index=ashu_web"
+   20  curl  -u 'admin:Jpmc@12345' -k https://localhost:8089/services/search/jobs -d search="search index=ashu_web"
+   21  curl  -u 'admin:Jpmc@12345' -k https://localhost:8089/services/search/jobs/1727437948.10188
+   22  history 
+```
+
+
+

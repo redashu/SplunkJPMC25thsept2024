@@ -1,0 +1,31 @@
+cat spl.yaml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: splunk-enterprise
+  labels:
+    app: splunk
+spec:
+  replicas: 1  # Single Splunk instance
+  selector:
+    matchLabels:
+      app: splunk
+  template:
+    metadata:
+      labels:
+        app: splunk
+    spec:
+      containers:
+        - name: splunk
+          image: splunk/splunk:latest
+          ports:
+            - containerPort: 8000   # Splunk Web Port
+            - containerPort: 8089   # Splunk Management Port
+            - containerPort: 9997   # Splunk Indexing/Forwarder Port
+          env:
+            - name: SPLUNK_START_ARGS
+              value: "--accept-license"
+            - name: SPLUNK_PASSWORD
+              value: "Jpmc@12345"  # Replace with a strong admin password
+            - name: SPLUNK_ENABLE_LISTEN
+              value: "9997"  # Enables the forwarder listening port
